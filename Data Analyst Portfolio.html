@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Kamran — Data Analyst Portfolio</title>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Sora:wght@400;600;700&family=Manrope:wght@400;500;600&display=swap">
+<style>
+:root{color-scheme:dark;--bg:#060a14;--ink:#e6edf7;--mute:#8d9bb3;--cy:#22d3ee;--bl:#3b82f6;--sl:#1b2538;--glass:rgba(20,30,50,.55);--line:rgba(120,170,255,.16);
+--h:'Sora',system-ui,sans-serif;--b:'Manrope',system-ui,sans-serif;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
+html{scroll-behavior:smooth;scroll-padding-top:80px}
+*,*::before,*::after{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--ink);font:16px/1.65 var(--b);overflow-x:hidden}
+body::before{content:"";position:fixed;inset:0;background:radial-gradient(60% 50% at 80% 5%,rgba(59,130,246,.22),transparent),radial-gradient(40% 40% at 5% 60%,rgba(34,211,238,.1),transparent);z-index:-2;pointer-events:none}
+h1,h2,h3{font-family:var(--h);line-height:1.15;margin:0}
+a{color:inherit;text-decoration:none}
+:focus-visible{outline:2px solid var(--cy);outline-offset:3px}
+.wrap{max-width:1120px;margin:auto;padding:0 22px}
+section{padding:96px 0}
+h2{font-size:clamp(1.7rem,3.4vw,2.4rem);margin-bottom:12px}
+.lead{color:var(--mute);max-width:56ch;margin:0 0 40px}
+.glass{background:var(--glass);border:1px solid var(--line);border-radius:20px;backdrop-filter:blur(18px);-webkit-backdrop-filter:blur(18px);box-shadow:0 1px 0 rgba(255,255,255,.06) inset,0 24px 60px -30px rgba(0,0,0,.8)}
+nav{position:fixed;top:env(safe-area-inset-top,0px);left:0;right:0;z-index:20;padding:12px 22px}
+nav .glass{max-width:1120px;margin:auto;display:flex;align-items:center;justify-content:space-between;padding:10px 18px;border-radius:999px}
+nav b{font-family:var(--h)}nav ul{display:flex;gap:22px;list-style:none;margin:0;padding:0;font-size:.9rem;color:var(--mute)}
+nav a:hover{color:var(--cy)}
+@media(max-width:720px){nav ul{display:none}}
+.btn{display:inline-flex;align-items:center;gap:8px;padding:12px 22px;border-radius:999px;font-weight:600;border:1px solid var(--line);background:transparent;color:var(--ink);cursor:pointer;font:600 .95rem var(--b);transition:transform .2s,box-shadow .2s}
+.btn:hover{transform:translateY(-2px)}
+.btn.p{background:linear-gradient(120deg,var(--bl),var(--cy));color:#03101c;border:0;box-shadow:0 10px 34px -10px var(--cy)}
+.btn.s{padding:8px 14px;font-size:.82rem}
+#hero{min-height:100vh;display:grid;align-items:center;padding-top:110px}
+.hgrid{display:grid;grid-template-columns:1.1fr .9fr;gap:30px;align-items:center}
+@media(max-width:860px){.hgrid{grid-template-columns:1fr}}
+h1{font-size:clamp(2.2rem,5.4vw,3.9rem);letter-spacing:-.02em}
+h1 em{font-style:normal;background:linear-gradient(100deg,var(--cy),var(--bl));-webkit-background-clip:text;background-clip:text;color:transparent}
+.sub{color:var(--mute);font-size:1.1rem;margin:22px 0 30px;max-width:52ch}
+.ctas{display:flex;gap:14px;flex-wrap:wrap}
+#stage{position:relative;height:min(56vw,480px);min-height:300px;border-radius:28px;overflow:hidden}
+#stage canvas{position:absolute;inset:0;width:100%;height:100%}
+.float{position:absolute;padding:10px 14px;border-radius:14px;font-size:.8rem;animation:fl 6s ease-in-out infinite}
+.float b{display:block;font:700 1.15rem var(--h);color:var(--cy)}
+@keyframes fl{50%{transform:translateY(-10px)}}
+.grid{display:grid;gap:20px}.g2{grid-template-columns:repeat(auto-fit,minmax(250px,1fr))}.g3{grid-template-columns:repeat(auto-fit,minmax(300px,1fr))}
+.card{padding:26px;transition:transform .25s,border-color .25s,box-shadow .25s;transform-style:preserve-3d}
+.card:hover{border-color:rgba(34,211,238,.5);box-shadow:0 0 40px -12px rgba(34,211,238,.45)}
+.card h3{font-size:1.1rem;margin:10px 0 14px}
+.badges{display:flex;flex-wrap:wrap;gap:8px}
+.badge{font-size:.8rem;padding:5px 11px;border-radius:999px;background:rgba(59,130,246,.14);border:1px solid rgba(59,130,246,.3);color:#bcd3ff}
+.ico{width:42px;height:42px;border-radius:12px;display:grid;place-items:center;background:linear-gradient(135deg,rgba(59,130,246,.35),rgba(34,211,238,.25));font-size:1.25rem}
+.tabs{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:26px}
+.tab{padding:8px 16px;border-radius:999px;border:1px solid var(--line);background:transparent;color:var(--mute);cursor:pointer;font:500 .88rem var(--b)}
+.tab[aria-pressed=true]{background:rgba(34,211,238,.14);color:var(--cy);border-color:rgba(34,211,238,.5)}
+.proj{padding:0;overflow:hidden;display:flex;flex-direction:column}
+.banner{height:170px;position:relative;display:flex;align-items:flex-end;padding:14px}
+.banner svg{position:absolute;inset:0;width:100%;height:100%}
+.pb{padding:22px;display:flex;flex-direction:column;gap:12px;flex:1}
+.pb h3{margin:0}.pb p{margin:0;font-size:.9rem;color:var(--mute)}.pb p b{color:var(--ink);font-weight:600}
+.acts{display:flex;gap:8px;flex-wrap:wrap;margin-top:auto;padding-top:6px}
+.hide{display:none}
+#embed .frame{padding:14px;overflow:hidden}
+.frame .ph{height:420px;border-radius:12px;background:repeating-linear-gradient(45deg,#0a1222,#0a1222 12px,#0c1628 12px,#0c1628 24px);display:grid;place-items:center;text-align:center;color:var(--mute);padding:20px}
+.frame iframe{width:100%;height:520px;border:0;border-radius:12px;background:#fff}
+.bar{display:flex;gap:8px;align-items:center;margin-bottom:12px;font-size:.85rem;color:var(--mute)}
+.dot{width:10px;height:10px;border-radius:50%;background:#334155}
+.tl{position:relative;margin-left:10px;padding-left:30px;border-left:2px solid var(--line)}
+.ti{position:relative;margin-bottom:22px;cursor:pointer}
+.ti::before{content:"";position:absolute;left:-39px;top:24px;width:14px;height:14px;border-radius:50%;background:var(--bg);border:2px solid var(--cy);transition:.25s}
+.ti.open::before{background:var(--cy);box-shadow:0 0 16px var(--cy)}
+.ti .d{display:none;color:var(--mute);margin:10px 0 0;font-size:.92rem}.ti.open .d{display:block}
+.ti small{color:var(--cy)}
+form{display:grid;gap:14px;padding:28px}
+label{font-size:.85rem;color:var(--mute);display:grid;gap:6px}
+input,textarea{font:inherit;color:var(--ink);background:rgba(6,10,20,.6);border:1px solid var(--line);border-radius:12px;padding:12px 14px;width:100%}
+input:focus,textarea:focus{outline:none;border-color:var(--cy);box-shadow:0 0 0 3px rgba(34,211,238,.18)}
+.cgrid{display:grid;grid-template-columns:1fr 1fr;gap:26px}@media(max-width:800px){.cgrid{grid-template-columns:1fr}}
+.links{display:grid;gap:12px;align-content:start}
+.links a{display:flex;justify-content:space-between;padding:16px 20px;border-radius:16px}
+.links a:hover{border-color:var(--cy)}
+footer{padding:36px 0;text-align:center;color:var(--mute);font-size:.85rem;border-top:1px solid var(--line)}
+.rv{opacity:0;transform:translateY(22px);transition:opacity .7s,transform .7s}.rv.in{opacity:1;transform:none}
+@media(prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}.rv{opacity:1;transform:none}html{scroll-behavior:auto}}
+</style>
+</head>
+<body>
+<nav><div class="glass"><b>Kamran<span style="color:var(--cy)">.data</span></b>
+<ul><li><a href="#skills">Skills</a></li><li><a href="#projects">Projects</a></li><li><a href="#embed">Dashboards</a></li><li><a href="#journey">Journey</a></li><li><a href="#contact">Contact</a></li></ul>
+<a class="btn s p" href="#contact">Hire me</a></div></nav>
+
+<header id="hero"><div class="wrap hgrid">
+<div>
+<h1>Turning raw data into <em>actionable insights</em> and visual stories.</h1>
+<p class="sub" id="heroSub"></p>
+<div class="ctas"><a class="btn p" href="#projects">Explore projects</a><a class="btn" href="#contact">Get in touch</a></div>
+</div>
+<div id="stage" class="glass" aria-label="Interactive 3D data visualization">
+<div class="float glass" style="top:7%;left:5%"><b id="f1">+18%</b>Inventory turnover</div>
+<div class="float glass" style="bottom:9%;right:5%;animation-delay:-3s"><b id="f2">4 dashboards</b>Live and shareable</div>
+</div></div></header>
+
+<section id="skills"><div class="wrap">
+<h2 class="rv">Skills and tools</h2><p class="lead rv">What I use to clean, model, and explain data.</p>
+<div class="grid g2" id="skillGrid"></div></div></section>
+
+<section id="projects"><div class="wrap">
+<h2 class="rv">Featured projects</h2><p class="lead rv">Each project states the business problem, the approach, and the result. Filter by tool.</p>
+<div class="tabs" id="tabs" role="group" aria-label="Filter projects"></div>
+<div class="grid g3" id="projGrid"></div></div></section>
+
+<section id="embed"><div class="wrap">
+<h2 class="rv">Live dashboards</h2><p class="lead rv">Pick a dashboard to load it here. Replace the URLs in the CONFIG block with your own embed links.</p>
+<div class="tabs" id="dashTabs"></div>
+<div class="glass frame rv"><div class="bar"><span class="dot"></span><span class="dot"></span><span class="dot"></span><span id="dashName" style="margin-left:8px"></span></div><div id="dashBody"></div></div>
+</div></section>
+
+<section id="journey"><div class="wrap">
+<h2 class="rv">Experience, education, and certifications</h2><p class="lead rv">Select an entry to read more.</p>
+<div class="tl" id="tl"></div></div></section>
+
+<section id="contact"><div class="wrap">
+<h2 class="rv">Let’s work together</h2><p class="lead rv">Tell me about your data problem. I usually reply within two days.</p>
+<div class="cgrid">
+<form class="glass" id="form"><label>Name<input name="n" required autocomplete="name"></label><label>Email<input type="email" name="e" required autocomplete="email"></label><label>Message<textarea name="m" rows="5" required></textarea></label><button class="btn p" id="send" type="submit">Send message</button><span id="status" role="status" style="color:var(--cy);font-size:.9rem"></span></form>
+<div class="links" id="links"></div></div></div></section>
+<footer>© <span id="yr"></span> Kamran. Built with HTML, CSS, and Three.js.</footer>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+<script>
+/* ========= CONFIG: swap your own content here ========= */
+const CONFIG={
+ name:"Kamran",
+ tagline:"SQL, Python, Power BI, Tableau, Looker Studio, BigQuery, and R. I build analyses that decision-makers can act on.",
+ email:"you@example.com",
+ skills:[
+  {i:"📊",t:"Data analysis",b:["SQL","Python","Pandas","NumPy","R","Excel"]},
+  {i:"🎨",t:"Visualization",b:["Tableau","Power BI","Looker Studio","Matplotlib"]},
+  {i:"☁️",t:"Databases and cloud",b:["BigQuery","PostgreSQL","MySQL","Git","GitHub"]},
+  {i:"🤖",t:"Machine learning and analytics",b:["scikit-learn","Regression","Clustering","A/B testing"]}
+ ],
+ /* cat must match a filter tab. img: optional URL; leave "" for the generated banner */
+ projects:[
+  {title:"Electronics Supply Chain and Inventory Analytics",cat:"Power BI",hue:210,img:"",
+   problem:"Stockouts and overstock were hiding in separate spreadsheets.",approach:"Joined supplier, stock, and sales tables in SQL, then modeled reorder points.",result:"A single dashboard that flags slow movers and at-risk SKUs.",
+   tags:["SQL","Power BI","DAX"],live:"",docs:"#",code:"https://github.com/your-username/supply-chain"},
+  {title:"Cyclistic Bike-Share: Member vs Casual Riders",cat:"Looker Studio",hue:185,img:"",
+   problem:"How should the company convert casual riders into annual members?",approach:"Cleaned 12 months of trip data in BigQuery and compared usage patterns.",result:"Clear ride-time and station patterns to target in a membership campaign.",
+   tags:["BigQuery","SQL","Looker Studio"],live:"https://lookerstudio.google.com/embed/reporting/YOUR_REPORT_ID",docs:"#",code:"https://github.com/your-username/cyclistic"},
+  {title:"Sales Performance Explorer",cat:"Tableau",hue:260,img:"",
+   problem:"Regional managers could not compare targets against actuals.",approach:"Built parameter-driven views with drill-down by product and month.",result:"Weekly reviews moved from slides to one live workbook.",
+   tags:["Tableau","Excel"],live:"https://public.tableau.com/views/YOUR_WORKBOOK",docs:"#",code:"#"},
+  {title:"Customer Churn Prediction",cat:"Python/SQL Analysis",hue:330,img:"",
+   problem:"Which customers are likely to leave next quarter?",approach:"Feature engineering in Pandas, logistic regression and random forest compared.",result:"A ranked risk list with the top drivers explained.",
+   tags:["Python","scikit-learn","Pandas"],live:"",docs:"#",code:"https://github.com/your-username/churn"}
+ ],
+ filters:["All","Looker Studio","Power BI","Tableau","Python/SQL Analysis"],
+ timeline:[
+  {y:"2026",t:"BSCS, Virtual University of Pakistan",d:"Final year, with a focus on data, databases, and web development. Final year project: a hospital management system."},
+  {y:"Certificate",t:"Google Data Analytics Professional Certificate",d:"Covered the full analysis lifecycle: ask, prepare, process, analyze, share, and act, ending with a capstone case study."},
+  {y:"Freelance",t:"Web developer, Fiverr and Upwork",d:"Delivered WordPress sites for clients. Replace this with your strongest analytics or client work."},
+  {y:"Add yours",t:"Your next role or award",d:"Edit the timeline array in CONFIG to add entries."}
+ ],
+ links:[["GitHub","github.com/your-username","https://github.com/"],["LinkedIn","linkedin.com/in/your-name","https://linkedin.com/"],["Email","you@example.com","mailto:you@example.com"],["Upwork","upwork.com/freelancers/you","https://upwork.com/"],["Fiverr","fiverr.com/you","https://fiverr.com/"]]
+};
+/* ========= Render ========= */
+const $=(s,r=document)=>r.querySelector(s),el=(h)=>{const d=document.createElement('div');d.innerHTML=h.trim();return d.firstChild};
+$('#heroSub').textContent=CONFIG.tagline;$('#yr').textContent=new Date().getFullYear();
+CONFIG.skills.forEach(s=>$('#skillGrid').append(el(`<div class="glass card rv"><div class="ico">${s.i}</div><h3>${s.t}</h3><div class="badges">${s.b.map(x=>`<span class="badge">${x}</span>`).join('')}</div></div>`)));
+
+function banner(p){const h=p.hue,bars=[40,70,55,95,80,120,100].map((v,i)=>`<rect x="${20+i*38}" y="${150-v}" width="24" height="${v}" rx="5" fill="hsl(${h+i*6} 90% 60%)" opacity=".75"/>`).join('');
+ return p.img?`<div class="banner" style="background:url('${p.img}') center/cover"></div>`:
+ `<div class="banner" style="background:linear-gradient(135deg,hsl(${h} 70% 18%),#070d1b)"><svg viewBox="0 0 300 170" preserveAspectRatio="xMidYMax slice">${bars}<polyline points="20,110 60,90 100,100 140,60 180,70 220,35 270,20" fill="none" stroke="#fff" stroke-opacity=".6" stroke-width="2"/></svg></div>`}
+const pg=$('#projGrid');
+CONFIG.projects.forEach((p,i)=>{const c=el(`<article class="glass card proj rv" data-cat="${p.cat}">${banner(p)}<div class="pb"><h3>${p.title}</h3>
+<p><b>Problem:</b> ${p.problem}</p><p><b>Approach:</b> ${p.approach}</p><p><b>Result:</b> ${p.result}</p>
+<div class="badges">${p.tags.map(t=>`<span class="badge">${t}</span>`).join('')}</div>
+<div class="acts">${p.live?`<button class="btn s p" data-live="${i}">Live dashboard</button>`:''}<a class="btn s" href="${p.docs}">View report</a><a class="btn s" href="${p.code}" target="_blank" rel="noopener">GitHub</a></div></div></article>`);pg.append(c)});
+const tabs=$('#tabs');
+CONFIG.filters.forEach((f,i)=>{const b=el(`<button class="tab" aria-pressed="${i==0}">${f}</button>`);b.onclick=()=>{[...tabs.children].forEach(x=>x.setAttribute('aria-pressed',x===b));[...pg.children].forEach(c=>c.classList.toggle('hide',f!=='All'&&c.dataset.cat!==f))};tabs.append(b)});
+
+/* dashboards */
+const live=CONFIG.projects.map((p,i)=>({p,i})).filter(x=>x.p.live);
+function showDash(i){const p=CONFIG.projects[i];$('#dashName').textContent=p.title;
+ const url=p.live,ph=/YOUR_/.test(url);
+ $('#dashBody').innerHTML=ph?`<div class="ph"><div><div style="font-size:2rem">📈</div><p>Placeholder for “${p.title}”.<br>Set <code>live</code> in CONFIG to your Looker Studio or Power BI embed URL.</p></div></div>`:`<iframe src="${url}" title="${p.title}" allowfullscreen loading="lazy" sandbox="allow-scripts allow-same-origin allow-popups"></iframe>`;
+ [...$('#dashTabs').children].forEach((b,k)=>b.setAttribute('aria-pressed',live[k].i===i))}
+live.forEach(x=>{const b=el(`<button class="tab">${x.p.title}</button>`);b.onclick=()=>showDash(x.i);$('#dashTabs').append(b)});
+if(live.length)showDash(live[0].i);
+document.addEventListener('click',e=>{const b=e.target.closest('[data-live]');if(b){showDash(+b.dataset.live);$('#embed').scrollIntoView()}});
+
+/* timeline */
+CONFIG.timeline.forEach((t,i)=>{const n=el(`<div class="ti glass card${i?'':' open'}" tabindex="0" role="button" aria-expanded="${!i}"><small>${t.y}</small><h3 style="margin:4px 0 0">${t.t}</h3><p class="d">${t.d}</p></div>`);
+ const tg=()=>{const o=n.classList.toggle('open');n.setAttribute('aria-expanded',o)};n.onclick=tg;n.onkeydown=e=>{if(e.key==='Enter'||e.key===' '){e.preventDefault();tg()}};$('#tl').append(n)});
+CONFIG.links.forEach(l=>$('#links').append(el(`<a class="glass" href="${l[2]}" target="_blank" rel="noopener"><span><b>${l[0]}</b></span><span style="color:var(--mute)">${l[1]}</span></a>`)));
+
+/* contact form: opens a mail draft; swap for Formspree/Netlify etc. */
+$('#form').onsubmit=e=>{e.preventDefault();const f=new FormData(e.target);$('#send').textContent='Sending…';
+ setTimeout(()=>{$('#send').textContent='Send message';$('#status').textContent='Thanks, '+f.get('n')+'. Your mail app will open with the draft.';
+ location.href=`mailto:${CONFIG.email}?subject=${encodeURIComponent('Portfolio enquiry from '+f.get('n'))}&body=${encodeURIComponent(f.get('m')+'\n\n'+f.get('e'))}`;e.target.reset()},600)};
+
+/* scroll reveal + card tilt */
+const io=new IntersectionObserver(es=>es.forEach(x=>{if(x.isIntersecting){x.target.classList.add('in');io.unobserve(x.target)}}),{threshold:.12});
+document.querySelectorAll('.rv').forEach(n=>io.observe(n));
+if(matchMedia('(hover:hover)').matches)document.addEventListener('pointermove',e=>{document.querySelectorAll('.card:hover').forEach(c=>{const r=c.getBoundingClientRect(),x=(e.clientX-r.left)/r.width-.5,y=(e.clientY-r.top)/r.height-.5;c.style.transform=`perspective(900px) rotateY(${x*6}deg) rotateX(${-y*6}deg)`})});
+document.addEventListener('pointerout',e=>{const c=e.target.closest&&e.target.closest('.card');if(c)c.style.transform=''});
+
+/* ========= 3D hero: data globe of nodes + floating bars ========= */
+(function(){const host=$('#stage');if(!window.THREE){host.insertAdjacentHTML('beforeend','<div style="position:absolute;inset:0;display:grid;place-items:center;color:var(--mute)">3D view unavailable</div>');return}
+const W=()=>host.clientWidth,H=()=>host.clientHeight,r=new THREE.WebGLRenderer({antialias:true,alpha:true});
+r.setPixelRatio(Math.min(devicePixelRatio,2));r.setSize(W(),H());host.prepend(r.domElement);
+const sc=new THREE.Scene(),cam=new THREE.PerspectiveCamera(45,W()/H(),.1,100);cam.position.z=7;
+const g=new THREE.Group();sc.add(g);
+const pts=[],N=90;for(let i=0;i<N;i++){const p=Math.acos(1-2*(i+.5)/N),t=Math.PI*(1+Math.sqrt(5))*i;pts.push(new THREE.Vector3(2*Math.sin(p)*Math.cos(t),2*Math.cos(p),2*Math.sin(p)*Math.sin(t)))}
+const nm=new THREE.MeshBasicMaterial({color:0x22d3ee}),sg=new THREE.SphereGeometry(.05,10,10);
+pts.forEach(v=>{const m=new THREE.Mesh(sg,nm);m.position.copy(v);g.add(m)});
+const lp=[];for(let i=0;i<N;i++)for(let j=i+1;j<N;j++)if(pts[i].distanceTo(pts[j])<.95)lp.push(pts[i],pts[j]);
+g.add(new THREE.LineSegments(new THREE.BufferGeometry().setFromPoints(lp),new THREE.LineBasicMaterial({color:0x3b82f6,transparent:true,opacity:.35})));
+g.add(new THREE.Mesh(new THREE.SphereGeometry(1.9,32,32),new THREE.MeshBasicMaterial({color:0x0b1a33,transparent:true,opacity:.7})));
+const bars=new THREE.Group();sc.add(bars);const bm=[];
+[.8,1.5,1.1,2.1,1.6].forEach((h,i)=>{const m=new THREE.Mesh(new THREE.BoxGeometry(.28,h,.28),new THREE.MeshBasicMaterial({color:i%2?0x3b82f6:0x22d3ee,transparent:true,opacity:.85}));m.position.set(-1.2+i*.6,-2.4+h/2,1.8);m.userData={h,i};bars.add(m);bm.push(m)});
+let mx=0,my=0;host.addEventListener('pointermove',e=>{const b=host.getBoundingClientRect();mx=(e.clientX-b.left)/b.width-.5;my=(e.clientY-b.top)/b.height-.5});
+const rm=matchMedia('(prefers-reduced-motion:reduce)').matches;let t=0,vis=true;
+new IntersectionObserver(e=>vis=e[0].isIntersecting).observe(host);
+(function loop(){requestAnimationFrame(loop);if(!vis)return;t+=.01;if(!rm){g.rotation.y+=.004}
+ g.rotation.x+=(my*.6-g.rotation.x)*.05;g.rotation.y+=mx*.01;
+ bm.forEach(m=>{const s=1+.15*Math.sin(t*2+m.userData.i);m.scale.y=s;m.position.y=-2.4+m.userData.h*s/2});
+ bars.rotation.y=Math.sin(t*.5)*.3;r.render(sc,cam)})();
+addEventListener('resize',()=>{r.setSize(W(),H());cam.aspect=W()/H();cam.updateProjectionMatrix()})})();
+</script>
+</body>
+</html>
